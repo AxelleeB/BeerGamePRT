@@ -1,32 +1,32 @@
 const stockCosts = 5
 const backorderCosts = 10
 
-//Berechnung der Wochen ohne Störungen (Perfekte Auftragsrate)
+//Calcul des semaines sans perturbations (taux de commande parfait)
 export function calcPerfectOrderRatePct(perfectOrders, allOrders) {
     return perfectOrders / allOrders
 }
 
-//Berechnung der Lagerkosten für die einzelne Woche (kumulierte Kosten pro Woche)
+//Calcul des frais de stockage pour chaque semaine (coûts cumulés par semaine)
 export function calcStorageCostsWeekly(currentStorageCosts, backorderCosts) {
     return currentStorageCosts + backorderCosts
 }
 
-//Berechnung der Lagergesamtkosten mit Lagerbestandsmenge
+//Calcul des coûts totaux de stockage avec quantité de stock
 export function calcStorageCosts(previousWeekCosts, newStock){
     return previousWeekCosts + (newStock * stockCosts)
 }
 
-//Berechnung der Lagergesamtkosten mit Backorderanzahl
+//Calcul des coûts totaux de stockage avec nombre de commandes en attente
 export function calcStorageCostsBackorder(previousWeekCosts, backorder){
     return previousWeekCosts + (backorder * backorderCosts)
 }
 
-//Berechnung des durchschnittlichen Lagerbestand
+//Calcul du stock moyen
 export function averageStock(sumStock, gameWeeks){
     return sumStock / (gameWeeks + 1)
 }
 
-//Berechnung der Wochen mit Lieferrückstand in Prozent
+//Calcul des semaines avec retard de livraison en pourcentage
 export function backorderWeeksPct(weeksWithBackorders, gameWeeks){
     return weeksWithBackorders / gameWeeks
 }

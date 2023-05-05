@@ -19,7 +19,7 @@ class End extends React.Component {
                         <div className={"KPItable"}>
                             <table>
                                  <tr>
-                                    <th>Round</th>
+                                    <th>Tour</th>
                                     <th>Coûts de stockage</th>
                                     <th>coût total</th>
                                     <th>Taux de commande parfait</th>
